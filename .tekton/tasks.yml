@@ -6,3 +6,13 @@
         script: |
           #!/bin/sh
           rm -rf /workspace/output/*
+
+- name: test
+  taskSpec:
+    steps:
+      - name: run-tests
+        image: python:3.9-slim
+        script: |
+          #!/bin/sh
+          pip install -r requirements.txt
+          pytest -q
